@@ -24,7 +24,97 @@ class MessagePage extends StatelessWidget {
               ))
         ],
       ),
-      body: Text('Message Page'),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+            ),
+            child: Text(
+              'Recent',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ),
+          Container(
+            height: 100,
+            padding: EdgeInsets.all(5),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                _buildRecentContact('Barry', context),
+                _buildRecentContact('Gioggy', context),
+                _buildRecentContact('Tere', context),
+                _buildRecentContact('Pucca', context),
+                _buildRecentContact('Davide', context),
+                _buildRecentContact('Valerio', context),
+                _buildRecentContact('Luca', context),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              child: ListView(
+                children: [
+                  _buildMessageTile('Gioggy', 'Ciao', 'time'),
+                  _buildMessageTile('Gioggy', 'Ciao cIAO', 'time2'),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRecentContact(String name, BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage('https://via.placeholder.com/150'),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            name,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMessageTile(String name, String message, String time) {
+    return ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      leading: CircleAvatar(
+        radius: 30,
+        backgroundImage: NetworkImage('https://via.placeholder.com/150'),
+      ),
+      title: Text(
+        name,
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      subtitle: Text(
+        message,
+        style: TextStyle(
+          color: Colors.grey,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
+      trailing: Text(
+        time,
+        style: TextStyle(
+          color: Colors.grey,
+        ),
+      ),
     );
   }
 }
