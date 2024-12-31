@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wori_app/core/theme.dart';
 
 class MessagePage extends StatelessWidget {
   const MessagePage({super.key});
@@ -52,12 +53,23 @@ class MessagePage extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: 10,
+          ),
           Expanded(
             child: Container(
+              decoration: BoxDecoration(
+                color: DefaultColors.messageListPage,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50),
+                  topRight: Radius.circular(50),
+                ),
+              ),
               child: ListView(
                 children: [
-                  _buildMessageTile('Gioggy', 'Ciao', 'time'),
-                  _buildMessageTile('Gioggy', 'Ciao cIAO', 'time2'),
+                  _buildMessageTile('Gioggy', 'Ciao', '08:30'),
+                  _buildMessageTile('Davide', 'Ciao cIAO', '08:50'),
+                  _buildMessageTile('Pucca', 'Ciao Pucco', '08:43'),
                 ],
               ),
             ),
