@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loggy/loggy.dart';
 import 'package:wori_app/core/theme.dart';
+import 'package:wori_app/login_page.dart';
 import 'package:wori_app/register_page.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: AppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: RegisterPage(),
+      home: LoginPage(),
     );
   }
 }
