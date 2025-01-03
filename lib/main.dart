@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wori_app/chat_page.dart';
 import 'package:wori_app/core/theme.dart';
-import 'package:wori_app/message_page.dart';
+import 'package:wori_app/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: AppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: ChatPage(),
+      home: RegisterPage(),
     );
   }
 }
