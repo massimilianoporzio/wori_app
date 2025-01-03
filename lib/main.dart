@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:loggy/loggy.dart';
 import 'package:wori_app/core/theme.dart';
 import 'package:wori_app/register_page.dart';
 
 void main() {
+  Loggy.initLoggy(
+    logPrinter: const PrettyPrinter(showColors: true),
+  );
   runApp(const MyApp());
 }
 
